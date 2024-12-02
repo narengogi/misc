@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class DayTwoPartOne {
+public class DayTwoPartTwo {
     
     public static void main(String[] args) {
         BufferedReader reader;
@@ -51,7 +51,12 @@ public class DayTwoPartOne {
                         i+=2;
                     } else if (i-2 > -1 && nums[i-2]-curr > 0 && nums[i-2]-curr < 4) {
                         i++;
-                    } 
+                    } else if (i==nums.length-1) {
+                        i++;
+                    } else if (i-1 == 0) {
+                        i++;
+                    }
+                    else return false;
                     tolerated = true;
                 } else return false;
             }
